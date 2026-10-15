@@ -1,167 +1,93 @@
-import { useState } from "react";
-import { Linkedin, Instagram, MessageCircle } from "lucide-react";
+import { site } from "../site.js";
+
+const skills = [
+  "Digital Strategy",
+  "Performance Marketing",
+  "SEO",
+  "Social Media",
+  "Content Strategy",
+  "Lead Generation",
+  "Paid Ads",
+  "Campaign Analytics",
+];
 
 export default function AboutSection() {
-  const [openIndex, setOpenIndex] = useState(0);
-
-  const services = [
-    {
-      title: "Creative Content Writing",
-      desc: "Tristique magna enim turpis commodo donec. Nam molestie quam id nisl aliquam. Pulvinar rhoncus praesent consequat pretium malesuada sed suscipit aliquet.",
-    },
-    {
-      title: "Digital Marketing",
-      desc: "Performance-driven digital marketing strategies.",
-    },
-    {
-      title: "Social Media Marketing",
-      desc: "Brand growth through social platforms.",
-    },
-    { title: "Project Management", desc: "Planning, execution, and delivery." },
-    { title: "SEO/SM Management", desc: "Search visibility and optimization." },
-  ];
-
-  const skills = [
-    "Content Writing",
-    "Digital Marketing",
-    "SEO",
-    "Social Media",
-    "Brand Strategy",
-    "Project Management",
-    "Analytics",
-  ];
-
   return (
-    <section id="about" className="w-full bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* ================= LEFT STICKY PROFILE ================= */}
-        <div className="lg:col-span-5">
-          <div className="sticky top-24 bg-gray-100 rounded-3xl p-8 text-center">
-            <div className="relative w-56 h-56 mx-auto rounded-full bg-[#24324A] overflow-hidden mb-6">
-              <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="flex justify-center items-center gap-5 mb-6 text-gray-600">
-              <p className="text-md font-medium mb-4">Follow me :</p>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full border flex items-center justify-center
-               hover:bg-black hover:text-white transition"
-              >
-                <Linkedin size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full border flex items-center justify-center
-               hover:bg-black hover:text-white transition"
-              >
-                <Instagram size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full border flex items-center justify-center
-               hover:bg-black hover:text-white transition"
-              >
-                <MessageCircle size={18} />
-              </a>
-            </div>
-
-            <div className="flex justify-center gap-4">
-              <button className="px-5 py-2 bg-black text-white rounded-full text-sm">
-                Download Resume
-              </button>
-              <button className="px-5 py-2 border rounded-full text-sm">
-                Hire Me
-              </button>
+    <section id="about" className="px-5 py-20">
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-28">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b8431f]">
+              About
+            </p>
+            <div className="mt-6 rounded-[2rem] bg-[#1e3d36] p-8 text-white">
+              <p className="font-heading text-5xl font-semibold text-[#f2b56b]">
+                PM
+              </p>
+              <h2 className="font-heading mt-6 text-3xl font-bold leading-tight">
+                {site.name}
+              </h2>
+              <p className="mt-1 text-white/70">{site.also}</p>
+              <p className="mt-4 text-sm text-white/80">{site.role}</p>
+              <div className="mt-8 flex flex-col gap-3">
+                <a
+                  href={site.resume}
+                  className="rounded-full bg-white px-5 py-2.5 text-center text-sm text-[#1e3d36]"
+                >
+                  Download Resume
+                </a>
+                <a
+                  href="#contact"
+                  className="rounded-full border border-white/30 px-5 py-2.5 text-center text-sm"
+                >
+                  Let&apos;s Work Together
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ================= RIGHT SCROLL CONTENT ================= */}
-        <div className="lg:col-span-7 space-y-16">
-          {/* ABOUT */}
-          <div>
-            <h2 className="text-6xl font-extrabold mb-4">
-              More about <br /> Prajakta Meshram
-            </h2>
-
-            <p className="text-gray-600 mb-4">
-              Lorem ipsum dolor sit amet consectetur. Bibendum mi bibendum nisi
-              mi at ornare tempor. Urna ut quam massa eu tellus adipiscing quis.
-            
-              Lorem ipsum dolor sit amet consectetur. Bibendum mi bibendum nisi
-              mi at ornare tempor. Urna ut quam massa eu tellus adipiscing quis.
+        <div className="lg:col-span-8">
+          <h2 className="font-heading text-4xl font-semibold leading-tight sm:text-5xl">
+            More about {site.name} ({site.also})
+          </h2>
+          <div className="mt-6 space-y-4 text-[#5c564c] leading-relaxed">
+            <p>
+              I&apos;m a Digital Marketing Strategist with 5+ years of
+              professional experience across digital marketing, business
+              operations, content strategy, SEO, social media marketing, and
+              paid advertising.
+            </p>
+            <p>
+              My approach combines creative thinking with strategic planning
+              and performance analysis. I work to understand each
+              business&apos;s goals, identify its target audience, and build
+              marketing strategies that improve online visibility, generate
+              qualified leads, and support sustainable growth.
+            </p>
+            <p>
+              From managing digital marketing for an EdTech academy to
+              overseeing marketing and service delivery in the technology
+              sector and developing freelance strategies for brands, I&apos;ve
+              gained experience across diverse industries.
             </p>
           </div>
 
-          {/* WHAT I DO */}
-          <div>
-            <h3 className="text-4xl font-bold mb-6">What I do</h3>
+          <blockquote className="font-heading mt-8 border-l-4 border-[#e07a3d] pl-5 text-2xl italic leading-snug text-[#1e3d36]">
+            Every business is different. Your marketing strategy should be, too.
+          </blockquote>
 
-            <div className="space-y-4">
-              {services.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="border-b pb-4 cursor-pointer"
-                  onClick={() =>
-                    setOpenIndex(openIndex === index ? null : index)
-                  }
-                >
-                  <div className="flex justify-between items-center">
-                    <h3 className="font-bold text-xl">{item.title}</h3>
-
-                    <span
-                      className={`w-10 h-10 rounded-full flex items-center justify-center transition
-            ${
-              openIndex === index
-                ? "bg-black text-white rotate-45"
-                : "bg-yellow-400"
-            }`}
-                    >
-                      <svg
-                        className="w-6 h-6 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M7 17L17 7" />
-                        <path d="M7 7h10v10" />
-                      </svg>
-                    </span>
-                  </div>
-
-                  {openIndex === index && (
-                    <p className="text-sm text-gray-600 mt-3 max-w-xl">
-                      {item.desc}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* SKILLS */}
-          <div>
-            <h3 className="text-3xl font-bold mb-6">Skills</h3>
-
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 rounded-full border text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+          <h3 className="font-heading mt-12 text-2xl font-bold">Skills</h3>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <li
+                key={skill}
+                className="rounded-full bg-white px-4 py-2 text-sm text-[#3f3a33] ring-1 ring-[#e6d9c8]"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

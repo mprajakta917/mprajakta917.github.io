@@ -1,105 +1,81 @@
-import { motion } from "framer-motion";
+const features = [
+  {
+    number: "01",
+    title: "Digital Marketing Strategy",
+    desc: "Develop marketing roadmaps aligned with business objectives, audience needs, competitor insights, channel selection, and measurable KPIs.",
+  },
+  {
+    number: "02",
+    title: "Social Media & Content Strategy",
+    desc: "Plan content calendars, campaign concepts, creative direction, reels, captions, and platform-specific content to strengthen brand presence.",
+  },
+  {
+    number: "03",
+    title: "Performance Marketing & Paid Ads",
+    desc: "Plan and manage Google Ads and Meta Ads campaigns, including audience research, creative testing, budget optimization, and lead-generation strategy.",
+  },
+  {
+    number: "04",
+    title: "SEO & Local SEO",
+    desc: "Improve search visibility through keyword research, on-page optimization, content planning, competitor analysis, and Google Business Profile optimization.",
+  },
+];
+
+const additional = [
+  "Lead generation and conversion funnel planning",
+  "Email and WhatsApp marketing",
+  "Competitor and market research",
+  "Website and landing-page marketing strategy",
+  "E-commerce marketing",
+  "Campaign analytics and reporting",
+];
 
 export default function FeatureCards() {
-  const features = [
-    {
-      title: "Marketing",
-      desc: "Lorem ipsum dolor sit amet consectetur. Vivamus nullam fermentum consequat.",
-      bg: "bg-[#FFF4DB]",
-      icon: (
-        <svg
-          className="w-12 h-12 stroke-gray-700"
-          fill="none"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1z" />
-          <path d="M16 9a5 5 0 010 6" />
-          <path d="M19 7a9 9 0 010 10" />
-        </svg>
-      ),
-    },
-    {
-      title: "Personal Growth",
-      desc: "Lorem ipsum dolor sit amet consectetur. Vivamus nullam fermentum consequat.",
-      bg: "bg-[#E6FFD5]",
-      icon: (
-        <svg
-          className="w-12 h-12 stroke-gray-700"
-          fill="none"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="M3 3v18h18" />
-          <path d="M7 14l4-4 3 3 5-5" />
-        </svg>
-      ),
-    },
-    {
-      title: "Business Startup",
-      desc: "Lorem ipsum dolor sit amet consectetur. Vivamus nullam fermentum consequat.",
-      bg: "bg-[#D6DDEB]",
-      icon: (
-        <svg
-          className="w-12 h-12 stroke-gray-700"
-          fill="none"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2v20" />
-          <path d="M5 9c3-3 11-3 14 0" />
-          <path d="M7 22h10" />
-        </svg>
-      ),
-    },
-    {
-      title: "Award Winner",
-      desc: "Lorem ipsum dolor sit amet consectetur. Vivamus nullam fermentum consequat.",
-      bg: "bg-[#F1F5F9]",
-      icon: (
-        <svg
-          className="w-12 h-12 stroke-gray-700"
-          fill="none"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="8" r="5" />
-          <path d="M9 14l-1 7 4-2 4 2-1-7" />
-        </svg>
-      ),
-    },
-  ];
-
   return (
-    <section  className="w-full pb-5 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 40 }}      // ⬇️ from bottom
-              whileInView={{ opacity: 1, y: 0 }}  // ⬆️ to position
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: "easeOut",
-              }}
-              className={`${item.bg} rounded-3xl p-8 text-center`}
-            >
-              <div className="flex justify-center mb-6">
-                {item.icon}
-              </div>
+    <section id="services" className="px-5 py-20">
+      <div className="mx-auto max-w-6xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b8431f]">
+          Services
+        </p>
+        <div className="mt-3 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <h2 className="font-heading text-4xl font-semibold sm:text-5xl">
+            What I do
+          </h2>
+          <p className="max-w-md text-sm leading-relaxed text-[#5f574e]">
+            Strategy and execution across the channels that help a business get
+            found, earn attention, and generate qualified leads.
+          </p>
+        </div>
 
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {features.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-3xl bg-white p-7 ring-1 ring-[#e6d9c8] transition hover:-translate-y-0.5 hover:ring-[#d24b24]"
+            >
+              <p className="font-heading text-sm font-bold text-[#b8431f]">
+                {item.number}
+              </p>
+              <h3 className="font-heading mt-4 text-2xl font-bold">
                 {item.title}
               </h3>
-
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm leading-relaxed text-[#5f574e]">
                 {item.desc}
               </p>
-            </motion.div>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-8 rounded-3xl bg-[#1e3d36] p-7 text-white sm:p-8">
+          <h3 className="font-heading text-xl font-bold">Additional services</h3>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {additional.map((item) => (
+              <li key={item} className="flex gap-3 text-sm text-white/85">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#e07a3d]" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

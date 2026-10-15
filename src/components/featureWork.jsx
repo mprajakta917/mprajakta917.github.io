@@ -1,156 +1,133 @@
+import { useState } from "react";
+
+const projects = [
+  {
+    name: "Sahara Computer & Laptop",
+    tag: "Social Media Strategy",
+    desc: "Social media strategy, content planning, brand communication, promotional content, and creative direction for a computer and laptop business.",
+  },
+  {
+    name: "Cosmical Event Planners",
+    tag: "Freelance Marketing",
+    desc: "End-to-end digital marketing, wedding and event content strategy, promotional campaigns, social media planning, and paid lead-generation activities.",
+  },
+  {
+    name: "Boffin's Data Science Academy",
+    tag: "EdTech Marketing",
+    desc: "Digital marketing, course promotions, admissions-focused content, audience targeting, and lead-generation support for an education business.",
+  },
+  {
+    name: "VK Softech Solutions LLP",
+    tag: "Marketing & Operations",
+    desc: "Digital marketing and service-delivery coordination across website development, app development, game development, graphic design, and digital marketing services.",
+  },
+  {
+    name: "Travel Mage",
+    tag: "Travel Marketing",
+    desc: "Digital marketing and content strategy tailored to travel audiences, destination promotion, and brand communication.",
+  },
+  {
+    name: "Commerce Ki Pathshala",
+    tag: "Education",
+    desc: "Client project for a commerce-education brand.",
+  },
+  {
+    name: "Hoora Car Wash",
+    tag: "Local Service",
+    desc: "Client project for a car-wash business.",
+  },
+  {
+    name: "S. R. Trading Company",
+    tag: "Trading",
+    desc: "Client project for a trading company.",
+  },
+  {
+    name: "Dilli Delicacies",
+    tag: "Food Brand",
+    desc: "Client project for a food brand.",
+  },
+];
+
 export default function FeaturedWork() {
+  const [active, setActive] = useState(0);
+  const project = projects[active];
+  const number = String(active + 1).padStart(2, "0");
+
   return (
-    <section id="portfolio" className="w-full bg-white py-16">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* ================= LEFT FEATURE CARD ================= */}
-        <div className="lg:col-span-5">
-          <div className="lg:col-span-5 bg-[#F3F3F3] rounded-3xl p-4">
-            <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
-                alt="Featured work"
-                className="w-full h-[380px] object-cover"
-              />
-
-              {/* Category pill */}
-              <span className="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-sm">
-                Photography
-              </span>
-            </div>
-
-            <div className="mt-5 flex justify-between items-end">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Digital Marketing
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Vivamus nullam
-                  fermentum consequat.
-                </p>
-              </div>
-
-              <button className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
-               <svg
-                    className="w-6 h-6" // 👈 increase size here
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M7 17L17 7" />
-                    <path d="M7 7h10v10" />
-                  </svg>
-              </button>
-            </div>
-          </div>
-          {/* ================= CTA + PROJECT MANAGEMENT ROW ================= */}
-          <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-6">
-            {/* CTA */}
-            <div className="lg:col-span-2 flex items-center justify-center">
-              <div className="w-40 h-40 border rounded-2xl flex flex-col items-center justify-center gap-4 cursor-pointer hover:bg-black hover:text-white transition">
-                <span>
-                  <svg
-                    className="w-10 h-10" // 👈 increase size here
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M7 17L17 7" />
-                    <path d="M7 7h10v10" />
-                  </svg>
-                </span>
-                <span className="text-lg">Hire Me</span>
-              </div>
-            </div>
-
-            {/* PROJECT MANAGEMENT CARD */}
-            <div className="lg:col-span-3">
-              <div className="relative rounded-3xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df"
-                  alt="Project Management"
-                  className="w-full h-[200px] object-cover"
-                />
-                <span className="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-sm">
-                  Project Management
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* ================= RIGHT CONTENT ================= */}
-        <div className="lg:col-span-7 flex flex-col gap-6">
-          {/* Heading */}
+    <section id="portfolio" className="px-5 py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-4xl font-extrabold mb-4">Featured Work</h2>
-            <p className="text-gray-600 max-w-xl">
-              Lorem ipsum dolor sit amet consectetur. Bibendum mi bibendum nisi
-              mi at ornare tempor. Una ut quam massa eu tellus adipiscing quis.
-              Tincidunt facilisis purus enim posuere gravida.
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b8431f]">
+              Portfolio
             </p>
+            <h2 className="font-heading mt-3 text-4xl font-semibold sm:text-5xl">
+              Featured work
+            </h2>
           </div>
+          <p className="max-w-sm text-sm leading-relaxed text-[#5f574e]">
+            Pick a project. All nine stay in the index, and the one you choose
+            opens beside it.
+          </p>
+        </div>
 
-          {/* Top small cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="relative rounded-3xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
-                alt=""
-                className="w-full h-[180px] object-cover"
-              />
-              <span className="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-sm">
-                Digital Marketing
-              </span>
-            </div>
-
-            <div className="relative rounded-3xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b"
-                alt=""
-                className="w-full h-[180px] object-cover"
-              />
-              <span className="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-sm">
-                Photography
-              </span>
-            </div>
-          </div>
-
-          {/* Bottom large card */}
-          <div className="relative rounded-3xl overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
-              alt=""
-              className="w-full h-[260px] object-cover"
-            />
-            <span className="absolute top-4 left-4 bg-yellow-400 px-4 py-1 rounded-full text-sm">
-              SEO / SMM
+        <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-12">
+          <article className="relative order-1 flex min-h-[340px] flex-col justify-between overflow-hidden rounded-[2rem] bg-[#1e3d36] p-8 text-white sm:p-10 lg:order-2 lg:col-span-7">
+            <span
+              aria-hidden="true"
+              className="font-heading pointer-events-none absolute -right-2 -top-6 text-[7.5rem] leading-none text-white/10 sm:text-[9rem]"
+            >
+              {number}
             </span>
-          </div>
-
-          {/* Bottom info row */}
-          <div className="flex justify-between items-end bg-[#F3F3F3] rounded-3xl p-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Digital Marketing</h3>
-              <p className="text-sm text-gray-600 max-w-md">
-                Lorem ipsum dolor sit amet consectetur. Vivamus nullam fermentum
-                consequat.
+            <p className="relative text-xs font-semibold uppercase tracking-[0.2em] text-[#f2b56b]">
+              {project.tag}
+            </p>
+            <div className="relative mt-8">
+              <h3 className="font-heading text-4xl font-semibold leading-[1.05] sm:text-5xl">
+                {project.name}
+              </h3>
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
+                {project.desc}
               </p>
             </div>
+            <p className="relative mt-10 font-heading text-lg text-[#f2b56b]">
+              {number}
+              <span className="text-white/40"> / 09</span>
+            </p>
+          </article>
 
-            <button className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
-             <svg
-                    className="w-6 h-6" // 👈 increase size here
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
+          <ol className="order-2 lg:order-1 lg:col-span-5">
+            {projects.map((item, index) => {
+              const selected = index === active;
+              return (
+                <li key={item.name}>
+                  <button
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() => setActive(index)}
+                    className={`flex w-full items-baseline gap-4 border-b border-[#e6d9c8] py-3.5 text-left transition ${
+                      selected ? "text-[#1c1915]" : "text-[#3f3a33] hover:text-[#1c1915]"
+                    }`}
                   >
-                    <path d="M7 17L17 7" />
-                    <path d="M7 7h10v10" />
-                  </svg>
-            </button>
-          </div>
+                    <span
+                      className={`font-heading w-8 shrink-0 text-sm ${
+                        selected ? "text-[#d24b24]" : ""
+                      }`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`font-heading text-lg leading-tight sm:text-xl ${
+                        selected ? "italic" : ""
+                      }`}
+                    >
+                      {item.name}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>

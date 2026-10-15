@@ -10,18 +10,20 @@ import TestimonialsSlider from "./components/testimonial";
 import WorkProcessSection from "./components/workProgress";
 
 function App() {
-  return <>
-  <Navigation />
-  <HeroSection />
-  <FeatureCards />
-  <FeaturedWork />
-  <AboutSection/>
-  <ClientsSection />
-  <TestimonialsSlider/>
-  <WorkProcessSection/>
-  <ContactHeroSection />
-  <ContactSection />
-  </>;
+  return (
+    <>
+      <Navigation />
+      <HeroSection />
+      <AboutSection />
+      <FeatureCards />
+      <FeaturedWork />
+      <WorkProcessSection />
+      <ClientsSection />
+      <TestimonialsSlider />
+      <ContactHeroSection />
+      <ContactSection />
+    </>
+  );
 }
 
 export default App;

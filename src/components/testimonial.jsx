@@ -1,113 +1,36 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-
 export default function TestimonialsSlider() {
-  const testimonials = [
-    {
-      name: "Jane Doe",
-      role: "Cloud Sales Executive",
-      rating: 4,
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Adipiscing accumsan nunc faucibus nibh at nisi nulla amet. Donec at facilisis diam ac enim nam ut.",
-    },
-    {
-      name: "John Smith",
-      role: "Cloud Sales Manager",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Adipiscing accumsan nunc faucibus nibh at nisi nulla amet. Donec at facilisis diam ac enim nam ut.",
-    },
-    {
-      name: "Olivia Wang",
-      role: "Cloud Sales Executive",
-      rating: 4,
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Adipiscing accumsan nunc faucibus nibh at nisi nulla amet. Donec at facilisis diam ac enim nam ut.",
-    },
-      {
-      name: "Jane Doe",
-      role: "Cloud Sales Executive",
-      rating: 4,
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Adipiscing accumsan nunc faucibus nibh at nisi nulla amet. Donec at facilisis diam ac enim nam ut.",
-    },  {
-      name: "Jane Doe",
-      role: "Cloud Sales Executive",
-      rating: 4,
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Adipiscing accumsan nunc faucibus nibh at nisi nulla amet. Donec at facilisis diam ac enim nam ut.",
-    },  {
-      name: "Jane Doe",
-      role: "Cloud Sales Executive",
-      rating: 4,
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Adipiscing accumsan nunc faucibus nibh at nisi nulla amet. Donec at facilisis diam ac enim nam ut.",
-    },
-  ];
-
   return (
-    <section id="testimonials" className="w-full bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="testimonials" className="px-5 py-20">
+      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[2rem] bg-[#1e3d36] text-white md:grid-cols-12">
+        <div className="border-b border-white/10 p-8 sm:p-10 md:col-span-4 md:border-b-0 md:border-r">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f2b56b]">
+            Testimonials
+          </p>
+          <h2 className="font-heading mt-4 text-4xl font-semibold leading-tight">
+            What people say
+          </h2>
+          <p className="mt-6 text-xs leading-relaxed text-white/55">
+            Sample layout only. Replace this with verified feedback before
+            treating it as a published testimonial.
+          </p>
+        </div>
 
-        {/* Heading */}
-        <h2 className="text-5xl font-extrabold text-center mb-14">
-          What did my client says
-        </h2>
-
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          autoplay={{ delay: 3500 }}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {testimonials.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-[#E9EEF6] rounded-3xl p-8 h-full mb-8">
-                
-                {/* Header */}
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-semibold">{item.name}</h4>
-                    <p className="text-sm text-gray-600">{item.role}</p>
-                  </div>
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className={i < item.rating ? "text-black" : "text-gray-400"}>
-                      ★
-                    </span>
-                  ))}
-                </div>
-
-                {/* Text */}
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {item.text}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
+        <blockquote className="relative p-8 sm:p-12 md:col-span-8">
+          <span
+            aria-hidden="true"
+            className="font-heading absolute left-6 top-2 text-8xl leading-none text-[#d24b24] sm:left-10"
+          >
+            “
+          </span>
+          <p className="font-heading relative mt-10 text-2xl font-medium italic leading-snug sm:text-3xl">
+            Working together helped us bring more structure and clarity to our
+            digital marketing activities. Prajakta approaches projects with
+            creativity, ownership, and a focus on business objectives.
+          </p>
+          <footer className="relative mt-8 text-sm text-[#f2b56b]">
+            [Client / Manager Name] · [Role / Company]
+          </footer>
+        </blockquote>
       </div>
     </section>
   );
